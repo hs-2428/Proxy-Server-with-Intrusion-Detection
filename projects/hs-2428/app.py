@@ -81,7 +81,7 @@ def perform_intrusion_check(data: bytes, source: str) -> bool:
 
 # --- Proxy Server Logic ---
 BLOCKED_DOMAINS = {"facebook.com", "youtube.com"}
-FAKE_IPS = ["8.8.8.8", "1.1.1.1", "208.67.222.222"]
+FAKE_IPS = []  # No hardcoded IPs - configure as needed
 FAKE_USER_AGENTS = ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"]
 
 def is_blocked(host):
@@ -102,9 +102,10 @@ def anonymize_request(request_data: str) -> str:
     headers = {line.split(':', 1)[0].lower(): line.split(':', 1)[1].strip()
                for line in lines[1:] if ':' in line}
 
-    fake_ip = random.choice(FAKE_IPS)
-    headers['x-forwarded-for'] = fake_ip
-    headers['x-real-ip'] = fake_ip
+    if FAKE_IPS:
+        fake_ip = random.choice(FAKE_IPS)
+        headers['x-forwarded-for'] = fake_ip
+        headers['x-real-ip'] = fake_ip
     headers['user-agent'] = random.choice(FAKE_USER_AGENTS)
     
     for h in ['via', 'x-proxy-id', 'forwarded']: headers.pop(h, None)

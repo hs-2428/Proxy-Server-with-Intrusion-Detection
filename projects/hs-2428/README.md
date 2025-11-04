@@ -34,3 +34,33 @@ A multi-threaded HTTP/HTTPS proxy server built in Python that includes a signatu
 * **Charting Library:** [Chart.js](https://www.chartjs.org/) for data visualization.
 
 ---
+
+## 🚀 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hs-2428/Proxy-Server-with-Intrusion-Detection.git
+   cd Proxy-Server-with-Intrusion-Detection
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## 📖 Usage
+
+1. Run the proxy server:
+   ```bash
+   python app.py
+   ```
+
+2. Configure your browser to use the proxy:
+   - Proxy server: `127.0.0.1`
+   - Port: `8080`
+
+3. Access the dashboard at: `http://127.0.0.1:5000`
+
+## 📦 Release Package
+
+To create a release package, download the source code and install the dependencies as above.
