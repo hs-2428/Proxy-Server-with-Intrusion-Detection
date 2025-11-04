@@ -7,5 +7,3 @@
 - Name: Harsh Sharma, Registration Number: 24BCE1016
 - Name: Aishwarya Subramanian, Registration Number: 24BCE1054
 - Name: Akshit Reddy, Registration Number: 24BCE1275
-
-*Please update with actual team member details and registration numbers.*
